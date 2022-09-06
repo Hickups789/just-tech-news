@@ -76,5 +76,13 @@ router.get('/post/:id', (req, res) => {
   res.render('single-post', { post });
 });
 
+router.get('/edit/:id', (req, res) => {
+  const post = dbPostData.get({ plain: true });
+
+res.render('edit-post', {
+ post,
+ loggedIn: true
+});
+})
 
 module.exports = router;
